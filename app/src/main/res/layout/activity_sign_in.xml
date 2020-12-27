@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".SignIn">
+
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_centerInParent="true">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtPhone"
+            android:hint="Phone Number"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColorHint="@color/wight"
+            android:text="0592565584"
+            android:textColor="@color/wight"
+            android:textSize="24sp"
+            android:inputType="phone"
+            android:maxLength="10"
+            app:met_baseColor="@color/black"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="10"
+            app:met_primaryColor="@color/wight"
+            app:met_singleLineEllipsis="true"/>
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtPass"
+            android:hint="Password"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textColorHint="@color/wight"
+            android:text="123123"
+            android:textColor="@color/wight"
+            android:maxLength="10"
+            android:textSize="24sp"
+            android:inputType="textPassword"
+            app:met_baseColor="@color/black"
+            app:met_floatingLabel="highlight"
+            app:met_maxCharacters="11"
+            app:met_primaryColor="@color/wight"
+            app:met_singleLineEllipsis="true"/>
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnSignIn"
+        android:layout_below="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+        android:background="@color/btnSignActive"
+        android:shadowColor="#000"
+        android:text="Sign In"
+        android:textColor="#fff" />
+
+
+    <TextView
+        android:id="@+id/encryptS"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="TextView" />
+
+</RelativeLayout>
