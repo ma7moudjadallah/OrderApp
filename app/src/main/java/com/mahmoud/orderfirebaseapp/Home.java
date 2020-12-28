@@ -49,7 +49,7 @@ import android.widget.Toast;
 import static com.mahmoud.orderfirebaseapp.R.layout.menu_item;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-//mmmmmmmmm
+
 
     private AppBarConfiguration mAppBarConfiguration;
     FirebaseDatabase database;
