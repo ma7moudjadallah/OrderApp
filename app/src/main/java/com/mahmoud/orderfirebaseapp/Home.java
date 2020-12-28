@@ -133,6 +133,7 @@ String categoryId="";
 //    }
 
 
+
     private void loadMenu() {
         Query query = database.getReference("categories");
         FirebaseRecyclerOptions<Category> options;
