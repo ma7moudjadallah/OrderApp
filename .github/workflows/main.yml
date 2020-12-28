@@ -23,7 +23,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Run java checkstyle
   # You may pin to the exact commit or the version.
   # uses: nikitasavinov/checkstyle-action@da0eda3bca8b0dcab6e76b38a5044aee8d1650d9
@@ -41,7 +41,6 @@ Default is `added`.
     filter_mode: # optional, default is added
     # Exit code for reviewdog when errors are found [true,false]
 Default is `false`.
-
     fail_on_error: # optional, default is false
     # Checkstyle config file
     checkstyle_config: # default is google_checks.xml
@@ -49,11 +48,9 @@ Default is `false`.
     workdir: # optional, default is .
     # Tool name to use for reviewdog reporter
     tool_name: # optional, default is reviewdog
-    
-      # Runs a single command using the runners shell
+     # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
-
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
