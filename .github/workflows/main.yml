@@ -38,7 +38,8 @@ jobs:
     # Filtering for the reviewdog command [added,diff_context,file,nofilter].
 Default is `added`.
 
-    filter_mode: # optional, default is added
+    filter_mode: # Filter results by added/modified lines.
+      github-check	
     # Exit code for reviewdog when errors are found [true,false]
 Default is `false`.
 
