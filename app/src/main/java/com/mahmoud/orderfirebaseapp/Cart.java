@@ -283,8 +283,7 @@ public class Cart extends AppCompatActivity {
 
         public String GenerateReceipt(Request request){
             Receipt receipt = new Receipt();
-//            receipt.items = request.getFoods();
-//            receipt.totalcost = request.getTotal();
+
             String message="---------Food Ready! Thank you!---------\n";
             for(Order i:receipt.items){
                 message+=i.getProductName()+" :"+i.getQuanlity()+"\n";
