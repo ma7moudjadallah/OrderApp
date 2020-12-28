@@ -35,7 +35,7 @@ public class ShowUsers extends AppCompatActivity {
         setContentView(R.layout.activity_show_users);
 
         users = new Users();
-        delete = findViewById(R.id.delete);
+        delete = findViewById(R.id.delete_btn);
         listView = findViewById(R.id.listData);
         database = FirebaseDatabase.getInstance();
         reference = database.getReference("User");
