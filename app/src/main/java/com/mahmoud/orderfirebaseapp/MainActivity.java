@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         txtSlogin = findViewById(R.id.txtSlogin);
         Typeface face = Typeface.createFromAsset(getAssets(),"fonts/NABILA.TTF");
-        txtSlogin.setTypeface(face);
+//        txtSlogin.setTypeface(face);
 
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override

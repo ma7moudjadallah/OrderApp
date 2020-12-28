@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.telecom.Call;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,38 +28,35 @@ import com.mahmoud.orderfirebaseapp.model.Food;
 import com.squareup.picasso.Picasso;
 
 public class FoodList extends AppCompatActivity {
-RecyclerView recyclerView;
-RecyclerView.LayoutManager layoutManager;
-FirebaseDatabase database;
-DatabaseReference food_list;
-    String categoryId="";
+    RecyclerView recyclerView;
+    RecyclerView.LayoutManager layoutManager;
+    FirebaseDatabase database;
+    DatabaseReference food_list;
+    String categoryId = "";
 
     FirebaseRecyclerAdapter<Food, MenuViewHolder> adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_list);
-        database=FirebaseDatabase.getInstance();
-        food_list=database.getReference("Foods");
+        database = FirebaseDatabase.getInstance();
+        food_list = database.getReference("Foods");
 
 
-                recyclerView=findViewById(R.id.recycler_food);
+        recyclerView = findViewById(R.id.recycler_food);
         recyclerView.setHasFixedSize(true);
-        layoutManager=new LinearLayoutManager(this);
+        layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        if(getIntent() !=null){
-            categoryId=getIntent().getStringExtra("CategoryId");
-            if (!categoryId.isEmpty()&&categoryId!=null){
+        if (getIntent() != null) {
+            categoryId = getIntent().getStringExtra("CategoryId");
+            if (!categoryId.isEmpty() && categoryId != null) {
 
             }
         }
         loadMenu();
 
     }
-
-
-
-
 
 
     private void loadMenu() {
@@ -75,11 +73,9 @@ DatabaseReference food_list;
                 menuViewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-//                        Toast.makeText(Home.this, "sdf", Toast.LENGTH_SHORT).show();
-//                        Intent foodlist =new Intent(Home.this,FoodList.class);
-//                        foodlist.putExtra("CategoryId",adapter.getRef(position).getKey());
-//                        startActivity(foodlist);
-
+                        Intent i = new Intent(FoodList.this, FoodDetails.class);
+                        i.putExtra("FoodId", adapter.getRef(position).getKey());
+                        startActivity(i);
                     }
                 });
             }
@@ -97,4 +93,4 @@ DatabaseReference food_list;
         adapter.startListening();
         recyclerView.setAdapter(adapter);
     }
-    }
+}
