@@ -20,7 +20,7 @@ android {
 
     android {
         lintOptions {
-            baseline file("lint-baseline.xml")
+             baseline file("lint-baseline.xml")
         }
     }
 }
